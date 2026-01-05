@@ -102,6 +102,11 @@
             justify-content: center;
             max-width: 1000px;
             margin: 0 auto;
+            background: #fff; /* card-like background similar to project cards */
+            border-radius: 8px;
+            padding: 28px; /* increased internal spacing */
+            border: 1px solid rgba(0,0,0,0.06);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
         }
         .about .photo {
             flex: 0 0 200px;
@@ -137,12 +142,12 @@
             height: 64px;
             object-fit: contain;
             border-radius: 8px;
-            filter: grayscale(100%);
-            transition: filter .15s ease, transform .15s ease;
+            /* show icons in full color by default */
+            filter: none;
+            transition: transform .15s ease;
         }
         .institutions a:hover img,
         .institutions a:focus img {
-            filter: none;
             transform: scale(1.06);
         }
 
@@ -220,6 +225,7 @@
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+                padding: 20px; /* comfortable spacing on small screens */
             }
             .about .photo img {
                 height: 180px;
@@ -337,14 +343,14 @@
                     <p>Currently studying at McMaster University and always open to opportunities for collaboration and learning.</p>
 
                     <div class="institutions" aria-label="Related institutions">
-                        <a href="#" title="Institution 1 (placeholder)" aria-label="Institution 1">
-                            <img src="icons/institution1-placeholder.png" alt="Institution 1 logo (placeholder)">
+                        <a href="https://www.caterpillar.com/en/company/global-footprint/china.html" title="CAT" aria-label="CAT" target="_blank" rel="noopener noreferrer">
+                            <img src="cat_logo.png" alt="CAT logo" width="64" height="64">
                         </a>
-                        <a href="#" title="Institution 2 (placeholder)" aria-label="Institution 2">
-                            <img src="icons/institution2-placeholder.png" alt="Institution 2 logo (placeholder)">
+                        <a href="https://www.mcmaster.ca" title="McMaster University" aria-label="McMaster University" target="_blank" rel="noopener noreferrer">
+                            <img src="mcmaster_logo.png" alt="McMaster University logo" width="64" height="64">
                         </a>
-                        <a href="#" title="Institution 3 (placeholder)" aria-label="Institution 3">
-                            <img src="icons/institution3-placeholder.png" alt="Institution 3 logo (placeholder)">
+                        <a href="https://www.macmed-t.com/" title="MEDT" aria-label="MEDT" target="_blank" rel="noopener noreferrer">
+                            <img src="medt_logo.png" alt="MEDT logo" width="64" height="64">
                         </a>
                     </div>
                 </div>
@@ -355,7 +361,7 @@
 
             <div class="projects-grid" aria-label="Portfolio projects">
                 <a class="project-card" href="project1.html" title="Open Project One">
-                    <img src="images/project1-placeholder.png" alt="Screenshot of Project One" loading="lazy">
+                    <img src="images/project1-placeholder.png" alt="Image of Project One" loading="lazy">
                     <div class="project-info">
                         <h3>Project One</h3>
                         <p>Short description of project one — what it does and technologies used.</p>
@@ -363,18 +369,18 @@
                 </a>
 
                 <a class="project-card" href="project2.html" title="Open Project Two">
-                    <img src="images/project2-placeholder.png" alt="Screenshot of Project Two" loading="lazy">
+                    <img src="images/project2-placeholder.png" alt="Image of Project Two" loading="lazy">
                     <div class="project-info">
                         <h3>Project Two</h3>
                         <p>Short description of project two — a quick summary and highlights.</p>
                     </div>
                 </a>
 
-                <a class="project-card" href="projects/project3.html" title="Open Project Three">
-                    <img src="images/project3-placeholder.png" alt="Screenshot of Project Three" loading="lazy">
+                <a class="project-card" href="exp_projects.html" title="Open Exploratory Projects">
+                    <img src="images/project3-placeholder.png" alt="Image of Exploratory Projects" loading="lazy">
                     <div class="project-info">
-                        <h3>Project Three</h3>
-                        <p>Short description of project three — user outcomes or impacts.</p>
+                        <h3>Exploratory Projects</h3>
+                        <p>A collection of personal projects that explore various new ideas and technologies.</p>
                     </div>
                 </a>
             </div>
