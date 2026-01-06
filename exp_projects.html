@@ -71,13 +71,8 @@
         }
         .expl-desc {
             font-size:0.95rem;
-            line-height:1.35;
-            overflow:hidden;
-            text-overflow:ellipsis;
-            display:-webkit-box;
-            -webkit-line-clamp:3; /* limit description to ~3 lines */
-            line-clamp:3; /* standard property for compatibility */
-            -webkit-box-orient:vertical;
+            line-height:1.45;
+            margin:0;
         }
 
         footer { margin-top:28px; text-align:center; color:#666; font-size:0.9rem; }
@@ -98,8 +93,18 @@
         </header>
 
         <main role="main">
+
+            
             <p class="note">A collection of smaller personal projects that explore various ideas and technologies. These are rapid prototypes, experiments, or tools that may not warrant a full project page but are still worth sharing.</p>
             <div class="expl-grid" aria-label="Exploratory projects list">
+                <div class="expl-card" role="article">
+                    <img class="expl-thumb" src="welding.jpg" alt="Experiment: Welding thumbnail">
+                    <div class="expl-body">
+                        <div class="expl-title">Experiment: Welding</div>
+                        <p class="expl-desc">Learned and practiced stick welding with mostly E7018/E6013 sticks (with professional guidance and proper PPE). (2024)</p>
+                    </div>
+                </div>
+                
                 <div class="expl-card" role="article">
                     <img class="expl-thumb" src="images/exp1-placeholder.png" alt="Exploratory project 1 thumbnail">
                     <div class="expl-body">
@@ -123,6 +128,7 @@
                         <p class="expl-desc">Explored rocketry with A6-3/B6-4 solid engines, compressed air, and water propulsion systems. (2017)</p>
                     </div>
                 </div>
+
             </div>
         </main>
 
