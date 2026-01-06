@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Personal HTML Website</title>
+    <style>
+        :root {
+            --green: #669966;
+            --green-light: #d8ead8; /* light green for header background */
+            --green-dark: #4d6b4d;
+        }
+        html,body { height:100%; margin:0; font-family: Arial, sans-serif; color:#222; }
+        .page { max-width:980px; margin:0 auto; padding:28px; display:flex; flex-direction:column; min-height:100vh; }
+        .center { display:flex; justify-content:center; align-items:center; }
+        header {
+            text-align:center;
+            margin:18px 0 26px;
+            background: var(--green-light);
+            padding: 18px 12px;
+            border-radius: 8px;
+        }
+        header h1 { margin:0; font-size:2rem; color:var(--green); letter-spacing:0.03em; }
+        .back-btn { display:inline-block; background:var(--green); color:#fff; padding:10px 16px; border-radius:6px; text-decoration:none; font-weight:600; box-shadow:0 3px 8px rgba(0,0,0,0.12); }
+        .back-btn:focus { outline:2px dashed #3e5f3e; outline-offset:4px; }
+        main { flex:1; margin:18px 0; }
+        .placeholder { border:1px dashed rgba(0,0,0,0.08); border-radius:8px; padding:18px; background:#fff; }
+        footer { margin-top:28px; text-align:center; color:#666; font-size:0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="center" style="margin-bottom:12px;">
+            <a class="back-btn" href="index.html#portfolio" aria-label="Back to portfolio">← Back to portfolio</a>
+        </div>
+
+        <header>
+            <h1>Personal HTML Website</h1>
+        </header>
+
+        <main>
+            <section class="placeholder" aria-labelledby="project1-heading">
+                <h2 id="project1-heading" style="margin-top:0;">Project 1 — Overview</h2>
+                <p>My passion with web development started in grade 10 Computer Science class. We learned about html, css and js. I made many creative projects and was very surprised how powerful it could be, and that was before AI-assisted coding. ;)</p>
+                <p>Going into university, I realized I could build a portfolio website with all the projects I've done so far, so I did!</p>
+                <p>Here are also some old html projects from my high school days. Enjoy!</p>
+            </section>
+        </main>
+
+        <div class="center" style="margin-top:18px;">
+            <a class="back-btn" href="index.html#portfolio" aria-label="Back to portfolio (bottom)">← Back to portfolio</a>
+        </div>
+
+        <footer>
+            <small>&copy; <span id="year"></span> Brad Ziyi Wang</small>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
