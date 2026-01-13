@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PROJECT EFH: SN10</title>
+    <style>
+        :root {
+            --green: #669966;
+            --green-light: #d8ead8; /* light green for header background */
+            --green-dark: #4d6b4d;
+        }
+        html,body { height:100%; margin:0; font-family: Arial, sans-serif; color:#222; }
+        .page { max-width:980px; margin:0 auto; padding:28px; display:flex; flex-direction:column; min-height:100vh; }
+        .center { display:flex; justify-content:center; align-items:center; }
+        header {
+            text-align:center;
+            margin:18px 0 26px;
+            background: var(--green-light);
+            padding: 18px 12px;
+            border-radius: 8px;
+        }
+        header h1 { margin:0; font-size:2rem; color:var(--green); letter-spacing:0.03em; }
+        .back-btn { display:inline-block; background:var(--green); color:#fff; padding:10px 16px; border-radius:6px; text-decoration:none; font-weight:600; box-shadow:0 3px 8px rgba(0,0,0,0.12); }
+        .back-btn:focus { outline:2px dashed #3e5f3e; outline-offset:4px; }
+        main { flex:1; margin:18px 0; }
+        .placeholder { border:1px dashed rgba(0,0,0,0.08); border-radius:8px; padding:18px; background:#fff; }
+        footer { margin-top:28px; text-align:center; color:#666; font-size:0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="center" style="margin-bottom:12px;">
+            <a class="back-btn" href="index.html#portfolio" aria-label="Back to portfolio">← Back to portfolio</a>
+        </div>
+
+        <header>
+            <h1>EFH: ERECTING FIREHYDRANT FOR SN10 (2021)</h1>
+        </header>
+
+        <main>
+            <section class="placeholder" aria-labelledby="project1-heading">
+                <h2 id="project1-heading" style="margin-top:0;">Starship SN10 and the limitations of its fire suppression systems</h2>
+                <p>SN10 was the third fully stacked Starship prototype. On March 3, 2021, SN10 was launched from Pad A. After six minutes and 29 seconds, it landed on the pad.</p>
+
+                <figure style="margin-top:12px;">
+                    <img src="sn10_rud.jpg" alt="SN10 RUD image" loading="lazy" style="max-width:100%; height:auto; border-radius:6px;">
+                    <figcaption>SN10 RUD (Rapid Unscheduled Disassembly)</figcaption>
+                </figure>
+
+                <p>After landing, fire could be seen under the vehicle and the water deluge system tried to bring the situation under control. However, around 10 minutes after touch down, SN10 exploded. It was observed that the explosion came from the oxygen tank.</p>
+
+                <figure style="margin-top:12px;">
+                    <img src="sn10_water.jpg" alt="SN10 water suppression attempts" loading="lazy" style="max-width:100%; height:auto; border-radius:6px;">
+                    <figcaption>Current fire suppression system in operation.</figcaption>
+                </figure>
+
+                <p>Observing the image, it is clear that the current fire suppression system did little help and failed to prevent the explosion:</p>
+
+                <p><strong>The water jet is unable to reach the source of fire.</strong></p>
+
+                <p>An obvious solution is to build a larger, taller water-gun turret that has a longer reach. However, this is difficult because a large superstructure near the landing pad would pose a collision risk to a descending vehicle. Due to the nature of Starship testing, a vehicle explosion may also damage the larger superstructure — this is likely why the current system keeps a low profile at the cost of reduced performance.</p>
+
+                <figure style="margin-top:12px;">
+                    <img src="sn10_spaceport.jpg" alt="Spaceport image near SN10" loading="lazy" style="max-width:100%; height:auto; border-radius:6px;">
+                    <figcaption>Site and Spaceport context: no tall buildings around the landing pads.</figcaption>
+                </figure>
+            </section>
+
+            <section class="placeholder" aria-labelledby="firehydrant-heading">
+                <h2 id="firehydrant-heading" style="margin-top:0;">Erecting Firehydrant: the adaptive fire suppression solution</h2>
+                
+                <p>To address these limitations I designed the EFH (Erecting FireHydrant) system. EFH uses multiple piston-like water‑gun units <strong>concealed beneath the landing surface and protected by a robust steel cover</strong> (comparable to aircraft carrier deck or flame‑deflector steel) that resists engine plume ablation.</p>
+                
+                <figure style="margin-top:12px;">
+                    <img src="sn10_efh.jpg" alt="Erecting Firehydrant diagram" loading="lazy" style="max-width:100%; height:auto; border-radius:6px;">
+                    <figcaption>EFH system diagram.</figcaption>
+                </figure>
+
+                <p>The units are centrally powered and coordinated: on touchdown only the units not blocked by the vehicle are activated. High‑pressure water raises the pistons out of the ground; once fully extended each unit locks so its mass no longer reduces water pressure, allowing sustained, high‑reach streams.</p>
+                
+                <figure style="margin-top:12px;">
+                    <img src="sn10_efh_cad.jpg" alt="Erecting Firehydrant 3D CAD model" loading="lazy" style="max-width:100%; height:auto; border-radius:6px;">
+                    <figcaption>EFH system 3D CAD model.</figcaption>
+                </figure>
+
+                <p>Each unit carries a remotely aimed water‑gun turret with an <strong>integrated camera (and optional infrared sensors to detect hidden heat sources)</strong> so operators can acquire and suppress heat sources precisely. The monolithic, reinforced body is designed to survive nearby vehicle explosions. After the suppression session, the locks release and the units retract back under the protective cover.</p>
+                
+                <figure style="margin-top:12px;">
+                    <img src="sn10_efh_prototype.jpg" alt="EFH functional prototype in operation" loading="lazy" style="max-width:100%; height:auto; border-radius:6px;">
+                    <figcaption>EFH functional prototype in operation.</figcaption>
+                </figure>
+
+                <p>A functional prototype was also constructed by me to test the concept.</p>
+
+            </section>
+        </main>
+
+        <div class="center" style="margin-top:18px;">
+            <a class="back-btn" href="index.html#portfolio" aria-label="Back to portfolio (bottom)">← Back to portfolio</a>
+        </div>
+
+        <footer>
+            <small>&copy; <span id="year"></span> Brad Ziyi Wang</small>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
