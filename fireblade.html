@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PROJECT FIREBLADE</title>
+    <style>
+        :root {
+            --green: #669966;
+            --green-light: #d8ead8; /* light green for header background */
+            --green-dark: #4d6b4d;
+        }
+        html,body { height:100%; margin:0; font-family: Arial, sans-serif; color:#222; }
+        .page { max-width:980px; margin:0 auto; padding:28px; display:flex; flex-direction:column; min-height:100vh; }
+        .center { display:flex; justify-content:center; align-items:center; }
+        header {
+            text-align:center;
+            margin:18px 0 26px;
+            background: var(--green-light);
+            padding: 18px 12px;
+            border-radius: 8px;
+        }
+        header h1 { margin:0; font-size:2rem; color:var(--green); letter-spacing:0.03em; }
+        .back-btn { display:inline-block; background:var(--green); color:#fff; padding:10px 16px; border-radius:6px; text-decoration:none; font-weight:600; box-shadow:0 3px 8px rgba(0,0,0,0.12); }
+        .back-btn:focus { outline:2px dashed #3e5f3e; outline-offset:4px; }
+        main { flex:1; margin:18px 0; }
+        .placeholder { border:1px dashed rgba(0,0,0,0.08); border-radius:8px; padding:18px; background:#fff; }
+        footer { margin-top:28px; text-align:center; color:#666; font-size:0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="center" style="margin-bottom:12px;">
+            <a class="back-btn" href="index.html#portfolio" aria-label="Back to portfolio">← Back to portfolio</a>
+        </div>
+
+        <header>
+            <h1>PROJECT FIREBLADE</h1>
+        </header>
+
+        <main>
+            <section class="placeholder" aria-labelledby="project1-heading">
+                <h2 id="project1-heading" style="margin-top:0;">Project Overview</h2>
+                <p>This page is a template for an individual project. Add images, descriptions, galleries, and any details about the project here. Replace this placeholder content with the real project material.</p>
+                
+                <figure style="margin-top:12px;">
+                    <img src="00.jpg" alt="image" loading="lazy" style="max-width:100%; height:auto; border-radius:6px;">
+                    <figcaption>Image</figcaption>
+                </figure>
+            
+                <small><strong>⚠️ Notice:</strong> All demonstrations were performed on private property in compliance with local laws and under the supervision of trained personnel. Multiple assistants and fire‑extinguishing units were present during testing, and the demonstrator wore appropriate protective clothing that has been water‑soaked. Do not attempt to replicate these demonstrations — activities involving pyrotechnic effects are hazardous.</small>
+            
+            </section>
+
+            <section class="placeholder" aria-labelledby="project1-heading">
+                <h2 id="project1-heading" style="margin-top:0;">Inspiration</h2>
+                <p>I once saw the video of Kiwamu Miyakubo, a Japanese fire artist who made multiple fire-katanas. These fire-katanas were able to be ignited and release additional flames as needed. The idea of combining fire and metal fascinated me, and I wanted to create a similar effect but with a more practical application in mind.</p>
+                <figure style="margin-top:12px;">
+                    <img src="firekatana.gif" alt="Kiwamu Miyakubo's fire katana" loading="lazy" style="max-width:100%; height:auto; border-radius:6px;">
+                    <figcaption>Kiwamu Miyakubo's fire katana, demonstrating it is safe even in indoor environments.</figcaption>
+                </figure>
+
+            </section>
+
+            <section class="placeholder" aria-labelledby="firehydrant-heading">
+                <h2 id="firehydrant-heading" style="margin-top:0;">Deciphering the Secret: Reverse Engineering</h2>
+                
+                <p>However, the details regarding the fire-kanata is kept secret. I must do my own research to find out the key technologies used.</p>
+
+                <p>Analysing the videos frame by frame, the katana sword is wrapped with fabric that must've been soaked with liquid fuel. Research on fire artist supplies revealed the flame resistant fabric to be Kevlar, commonly used for bullet-proof vests. The liquid fuel is likely to be kerosene, for that it burns clean and creates a bright orange flame.</p>
+
+                <figure style="margin-top:12px;">
+                    <img src="kevlar_fire.jpg" alt="Kevlar gadgets used for fire art" loading="lazy" style="max-width:100%; height:auto; border-radius:6px;">
+                    <figcaption>Kevlar gadgets used for fire art.</figcaption>
+                </figure>
+
+                <p>How did the kanata release additional flames? The additional flame came out from the tip of the sword, can be seen with yellowish/brownish color before ignition, has a distinctive burning color, and released much more smoke than the liquid fuel. Therefore, I suspected it to be some kind of solid fuel. However, if it was blackpowder, it would've spontaneously exploded in the sword as blackpowder has its own oxidizer. I concluded that it must be a single based solid fuel with a yellow/brown color.</p>
+                <p>Further research confirmed that the solid fuel is lycopodium, a fine yellow powder used in pyrotechnics and fire effects. It is actually the spores of clubmosses, and the spores contains lipids that act as the source of fuel.</p>
+                <figure style="margin-top:12px;">
+                    <img src="lycopodium.jpg" alt="Lycopodium" loading="lazy" style="max-width:100%; height:auto; border-radius:6px;">
+                    <figcaption>Lycopodium is the spores of clubmosses.</figcaption>
+                </figure>
+
+                <p>Additional features noted are:</p>
+
+                <ul>
+                    <li>The katana is a hollow metal tube rather than a solid blade; the tube stores a fine lycopodium‑based solid fuel.</li>
+                    <li>The handle houses a flint‑and‑wheel ignition mechanism similar to a lighter: the sword can be ignited this way and extinguished by sliding it into its sheath.</li>
+                    <li>Sparks are produced by metal powder sprinkled into the solid fuel. While magnesium can produce a bright effect, research indicates pyrotechnic shows typically use a low‑conbustion‑temperature alloy for safety.</li>
+                </ul>
+                
+
+            </section>
+        </main>
+
+        <div class="center" style="margin-top:18px;">
+            <a class="back-btn" href="index.html#portfolio" aria-label="Back to portfolio (bottom)">← Back to portfolio</a>
+        </div>
+
+        <footer>
+            <small>&copy; <span id="year"></span> Brad Ziyi Wang</small>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

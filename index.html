@@ -3,13 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
     <title>Brad Ziyi Wang - Portfolio</title>
     <meta name="description" content="Brad Ziyi Wang — engineering student portfolio showcasing projects, resume, and contact.">
     <style>
         :root {
-            --green: #669966;       /* main green */
-            --green-dark: #4d6b4d;  /* darker for nav */
-            --green-light: #d8ead8; /* light background */
+            color-scheme: dark;
+
+            /* Dark green palette */
+            --bg: #0e1511;              /* page background */
+            --surface: #16211a;         /* cards */
+            --surface-hover: #1c2a21;   /* card hover / raised */
+            --border: rgba(255,255,255,0.08);
+            --text: #e4ede6;            /* main text */
+            --text-muted: #a3b5a8;      /* secondary text */
+            --accent: #6fbf8b;          /* bright green: headings, links, buttons */
+            --accent-strong: #8fd4a6;   /* hover state for accent */
+            --nav-bg: #1a3325;          /* nav bar */
+            --footer-bg: #111b15;       /* footer */
+            --on-accent: #0b1410;       /* dark text used on top of accent color */
+
+            --portrait-width: 220px;    /* portrait width; height follows the image's own ratio */
+            --logo-height: 56px;        /* every logo gets this height; width follows each logo's ratio */
         }
         html {
             scroll-behavior: smooth;
@@ -18,6 +33,17 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background: var(--bg);
+            color: var(--text);
+        }
+        h2 {
+            color: var(--accent);
+        }
+        a {
+            color: var(--accent);
+        }
+        a:hover {
+            color: var(--accent-strong);
         }
         /* Skip link (for keyboard users) */
         .skip-link {
@@ -33,14 +59,14 @@
             top: 10px;
             width: auto;
             height: auto;
-            background: var(--green-dark);
-            color: #fff;
+            background: var(--accent);
+            color: var(--on-accent);
             padding: 8px 12px;
             z-index: 1000;
         }
         header {
-            /* add a green overlay for better text contrast */
-            background-image: linear-gradient(rgba(102,153,102,0.35), rgba(102,153,102,0.35)), url("header_background.jpg");
+            /* dark green overlay for better text contrast */
+            background-image: linear-gradient(rgba(10,25,16,0.62), rgba(10,25,16,0.62)), url("header_background.jpg");
             background-size: cover;
             background-position: center;
             color: white;
@@ -56,8 +82,9 @@
             margin: 10px 0 0 0;
         }
         nav {
-            background-color: var(--green-dark);
+            background-color: var(--nav-bg);
             overflow: hidden;
+            border-bottom: 1px solid var(--border);
         }
         nav ul {
             list-style-type: none;
@@ -74,20 +101,20 @@
         }
         nav a {
             display: inline-block;
-            color: white;
+            color: var(--text);
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
         }
         nav a:hover,
         nav a:focus {
-            background-color: var(--green-light);
-            color: black;
+            background-color: var(--accent);
+            color: var(--on-accent);
             outline: none;
         }
         nav a:focus {
-            outline: 2px dashed var(--green-dark);
-            outline-offset: 2px;
+            outline: 2px dashed var(--accent-strong);
+            outline-offset: -4px;
         }
         section {
             padding: 20px;
@@ -102,53 +129,65 @@
             justify-content: center;
             max-width: 1000px;
             margin: 0 auto;
-            background: #fff; /* card-like background similar to project cards */
+            background: var(--surface); /* card-like background similar to project cards */
             border-radius: 8px;
             padding: 28px; /* increased internal spacing */
-            border: 1px solid rgba(0,0,0,0.06);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.35);
         }
         .about .photo {
-            flex: 0 0 200px;
+            flex: 0 0 var(--portrait-width);
         }
         .about .photo img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: auto;          /* keeps the original proportions, no square crop */
             border-radius: 8px;
             display: block;
         }
         .about .intro {
             flex: 1;
         }
+        .about .intro h3 {
+            color: var(--accent);
+        }
         .about .intro p {
             margin-top: 0.2rem;
             line-height: 1.45;
+            color: var(--text);
         }
 
         /* Institutions icons centered under about */
         .institutions {
             margin-top: 18px;
             display: flex;
-            gap: 16px;
+            flex-wrap: wrap;       /* logos wrap instead of overflowing on narrow screens */
+            gap: 16px 24px;
             justify-content: center;
             align-items: center;
         }
         .institutions a {
             display: inline-block;
+            /* light chip behind each logo so dark logos stay visible on the dark theme */
+            background: #f2f5f3;
+            padding: 8px 12px;
+            border-radius: 10px;
         }
         .institutions img {
-            width: 64px;
-            height: 64px;
+            height: var(--logo-height);
+            width: auto;           /* width follows each logo's own proportions */
             object-fit: contain;
-            border-radius: 8px;
-            /* show icons in full color by default */
+            border-radius: 4px;
             filter: none;
             transition: transform .15s ease;
+            display: block;
         }
         .institutions a:hover img,
         .institutions a:focus img {
             transform: scale(1.06);
+        }
+        .institutions a:focus {
+            outline: 2px dashed var(--accent-strong);
+            outline-offset: 3px;
         }
 
         /* Resume center / download button */
@@ -159,17 +198,78 @@
             gap: 12px;
             margin-top: 8px;
         }
+        .contact-form-wrapper {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 24px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+        .contact-form {
+            display: grid;
+            gap: 16px;
+        }
+        .form-group {
+            display: grid;
+            gap: 7px;
+        }
+        .form-group label {
+            font-weight: 600;
+        }
+        .form-group input,
+        .form-group textarea {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--bg);
+            color: var(--text);
+            font: inherit;
+        }
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+        .submit-btn {
+            justify-self: start;
+            padding: 11px 18px;
+            border: 0;
+            border-radius: 6px;
+            background: var(--accent);
+            color: var(--on-accent);
+            font: inherit;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .submit-btn:hover,
+        .submit-btn:focus {
+            background: var(--accent-strong);
+        }
+        .form-status {
+            min-height: 1.4em;
+            margin: 0;
+            color: var(--text-muted);
+        }
         .download-btn {
-            background: var(--green);
-            color: #fff;
+            background: var(--accent);
+            color: var(--on-accent);
             padding: 10px 18px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.4);
         }
         .download-btn:hover,
         .download-btn:focus {
+            background: var(--accent-strong);
+            color: var(--on-accent);
             transform: translateY(-1px);
             outline: none;
         }
@@ -184,19 +284,27 @@
         }
         .project-card {
             display: block;
+            order: var(--order, 999);
             text-decoration: none;
             color: inherit;
-            background: #fff;
+            background: var(--surface);
+            border: 1px solid var(--border);
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-            transition: transform .14s ease, box-shadow .14s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+            transition: transform .14s ease, box-shadow .14s ease, background .14s ease;
         }
         .project-card:focus,
         .project-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            background: var(--surface-hover);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.55);
             outline: none;
+            color: inherit;
+        }
+        .project-card:focus {
+            outline: 2px dashed var(--accent);
+            outline-offset: 3px;
         }
         .project-card img {
             width: 100%;
@@ -210,12 +318,12 @@
         .project-info h3 {
             margin: 0 0 6px;
             font-size: 1.05rem;
-            color: var(--green-dark);
+            color: var(--accent);
         }
         .project-info p {
             margin: 0;
             font-size: .95rem;
-            color: #444;
+            color: var(--text-muted);
             line-height: 1.35;
         }
 
@@ -227,8 +335,13 @@
                 text-align: center;
                 padding: 20px; /* comfortable spacing on small screens */
             }
+            .about .photo {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 220px;
+            }
             .about .photo img {
-                height: 180px;
+                height: auto;
                 max-width: 220px;
             }
             .about .intro { width: 100%; }
@@ -236,14 +349,15 @@
         footer {
             text-align: center;
             padding: 32px 20px; /* more space above and below footer content */
-            background: var(--green-light);
-            color: var(--green-dark);
+            background: var(--footer-bg);
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
         }
 
         /* social / slogan in footer */
         footer .slogan {
             margin: 10px 0 8px; /* add a bit of space below slogan */
-            color: var(--green-dark);
+            color: var(--accent);
             font-weight: 600;
             font-size: 1.1rem; /* slightly larger slogan */
         }
@@ -273,24 +387,28 @@
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            background: var(--green);
-            color: #fff;
+            background: var(--accent);
+            color: var(--on-accent);
             display: inline-flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             transition: opacity .18s ease, transform .18s ease;
             opacity: 0;
             transform: translateY(8px);
             z-index: 1000;
+        }
+        .back-to-top:hover {
+            background: var(--accent-strong);
+            color: var(--on-accent);
         }
         .back-to-top.show {
             opacity: 1;
             transform: none;
         }
         .back-to-top:focus {
-            outline: 2px dashed var(--green-dark);
+            outline: 2px dashed var(--accent-strong);
             outline-offset: 3px;
         }
         /* Responsive tweaks */
@@ -334,7 +452,7 @@
 
             <div class="about" aria-labelledby="about-heading">
                 <div class="photo" aria-hidden="false">
-                    <img src="images/me-placeholder.png" alt="Photo of Brad Ziyi Wang (placeholder)">
+                    <img src="portrait.jpg" alt="Photo of me">
                 </div>
 
                 <div class="intro">
@@ -344,13 +462,16 @@
 
                     <div class="institutions" aria-label="Related institutions">
                         <a href="https://www.caterpillar.com/en/company/global-footprint/china.html" title="CAT" aria-label="CAT" target="_blank" rel="noopener noreferrer">
-                            <img src="cat_logo.png" alt="CAT logo" width="64" height="64">
+                            <img src="cat_logo.png" alt="CAT logo">
                         </a>
                         <a href="https://www.mcmaster.ca" title="McMaster University" aria-label="McMaster University" target="_blank" rel="noopener noreferrer">
-                            <img src="mcmaster_logo.png" alt="McMaster University logo" width="64" height="64">
+                            <img src="mcmaster_logo.png" alt="McMaster University logo">
                         </a>
-                        <a href="https://www.macmed-t.com/" title="MEDT" aria-label="MEDT" target="_blank" rel="noopener noreferrer">
-                            <img src="medt_logo.png" alt="MEDT logo" width="64" height="64">
+                        <a href="https://www.macmed-t.com" title="MEDT" aria-label="MEDT" target="_blank" rel="noopener noreferrer">
+                            <img src="medt_logo.png" alt="MEDT logo">
+                        </a>
+                        <a href="https://investor.ipgphotonics.com" title="IPG" aria-label="IPG" target="_blank" rel="noopener noreferrer">
+                            <img src="ipg_logo.png" alt="IPG logo">
                         </a>
                     </div>
                 </div>
@@ -359,8 +480,9 @@
         <section id="portfolio">
             <h2>Portfolio</h2>
 
+            <!-- Change the --order number on a card to move it. Lower numbers appear first. Steps of 10 let you insert cards between others. -->
             <div class="projects-grid" aria-label="Portfolio projects">
-                <a class="project-card" href="website.html" title="Open Personal HTML Website">
+                <a class="project-card" style="--order: 6" href="website.html" title="Open Personal HTML Website">
                     <img src="website.png" alt="Personal website screenshot" loading="lazy">
                     <div class="project-info">
                         <h3>Personal HTML Website</h3>
@@ -368,15 +490,15 @@
                     </div>
                 </a>
 
-                <a class="project-card" href="project1.html" title="Open Project One">
-                    <img src="images/project1-placeholder.png" alt="Image of Project One" loading="lazy">
+                <a class="project-card" style="--order: 100" href="project1.html" title="Open Project One">
+                    <img src="wip.jpg" alt="Image of Project One" loading="lazy">
                     <div class="project-info">
                         <h3>Project One</h3>
                         <p>Template.</p>
                     </div>
                 </a>
 
-                <a class="project-card" href="project_malic.html" title="Open Project MALIC: First Aid Cryo-container (2024)">
+                <a class="project-card" style="--order: 1" href="project_malic.html" title="Open Project MALIC: First Aid Cryo-container (2024)">
                     <img src="malic_v2.png" alt="Image of Project MALIC V2" loading="lazy">
                     <div class="project-info">
                         <h3>Project MALIC: First Aid Cryo-container (2024)</h3>
@@ -384,7 +506,7 @@
                     </div>
                 </a>
                 
-                <a class="project-card" href="3d.html" title="Open Project 3D Printing">
+                <a class="project-card" style="--order: 5" href="3d.html" title="Open Project 3D Printing">
                     <img src="3d.png" alt="Image of 3D printing" loading="lazy">
                     <div class="project-info">
                         <h3>Project 3D Printing</h3>
@@ -392,7 +514,7 @@
                     </div>
                 </a>
 
-                <a class="project-card" href="project_laser.html" title="Open Project Laser Range Finder">
+                <a class="project-card" style="--order: 4" href="project_laser.html" title="Open Project Laser Range Finder">
                     <img src="laser_mini.png" alt="Image of Project Laser Range Finder" loading="lazy">
                     <div class="project-info">
                         <h3>Project: Laser Range Finder (2023)</h3>
@@ -400,7 +522,7 @@
                     </div>
                 </a>
 
-                <a class="project-card" href="sn10.html" title="Open Project EFH: Erecting Firehydrant for SN10 (2021)">
+                <a class="project-card" style="--order: 3" href="sn10.html" title="Open Project EFH: Erecting Firehydrant for SN10 (2021)">
                     <img src="sn10_rud.jpg" alt="Image of SN10 undergoing Rapid Unplanned Disassembly" loading="lazy">
                     <div class="project-info">
                         <h3>Project EFH: Erecting Firehydrant for SN10 (2021)</h3>
@@ -408,16 +530,16 @@
                     </div>
                 </a>
 
-                <a class="project-card" href="fireblade.html" title="Open Project Fireblade">
-                    <img src="fireblade.png" alt="Image of Project Fireblade" loading="lazy">
+                <a class="project-card" style="--order: 70" href="fireblade.html" title="Open Project Fireblade">
+                    <img src="wip.jpg" alt="Image of Project Fireblade" loading="lazy">
                     <div class="project-info">
                         <h3>Project: Fireblade (2021)</h3>
                         <p>Built a tanto-inspired fire art gadget to harness the beauty of flame.</p>
                     </div>
                 </a>
 
-                <a class="project-card" href="exp_projects.html" title="Open Exploratory Projects">
-                    <img src="images/project3-placeholder.png" alt="Image of Exploratory Projects" loading="lazy">
+                <a class="project-card" style="--order: 80" href="exp_projects.html" title="Open Exploratory Projects">
+                    <img src="wip.jpg" alt="Image of Exploratory Projects" loading="lazy">
                     <div class="project-info">
                         <h3>Exploratory Projects</h3>
                         <p>A collection of personal projects that explore various new ideas and technologies.</p>
@@ -436,9 +558,34 @@
             </div>
         </section>
         <section id="contact">
-            <h2>Contact</h2>
-            <p>Have questions, feedbacks or interested in working together? Get in touch with me via email!</p>
-            <p>Click the link: <a href="mailto:wangz838@mcmaster.ca;atgm230913@gmail.com">Send an email</a> (to both my school and personal email)</p>
+            <h2>Get In Touch With Brad</h2>
+            <p>Have a question or interested in working together? Send me a message.</p>
+            <div class="contact-form-wrapper">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="contactName">Name</label>
+                        <input type="text" id="contactName" name="name" placeholder="Your name" autocomplete="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactEmail">Email</label>
+                        <input type="email" id="contactEmail" name="email" placeholder="your@email.com" autocomplete="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactSubject">Subject</label>
+                        <input type="text" id="contactSubject" name="subject" placeholder="What is this about?" maxlength="120">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" name="message" placeholder="Your message..." required></textarea>
+                    </div>
+
+                    <p id="formStatus" class="form-status" aria-live="polite"></p>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
         </section>
     </main>
 
@@ -462,6 +609,24 @@
     <script>
         // small JS to set the current year in the footer
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const form = event.currentTarget;
+            const formData = new FormData(form);
+            const subject = formData.get('subject') || 'Contact from portfolio website';
+            const body = [
+                `Name: ${formData.get('name')}`,
+                `Email: ${formData.get('email')}`,
+                '',
+                formData.get('message')
+            ].join('\n');
+            const mailto = `mailto:atgm230913@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            document.getElementById('formStatus').textContent = 'Opening your email app to send this message.';
+            window.location.href = mailto;
+        });
 
         // Show / hide back-to-top button based on scroll
         (function () {
