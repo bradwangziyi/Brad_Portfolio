@@ -3,28 +3,40 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="dark">
     <title>EXPLORATORY PROJECTS — Brad Ziyi Wang</title>
     <style>
         :root {
-            --green: #669966;
-            --green-light: #d8ead8;
-            --green-dark: #4d6b4d;
+            color-scheme: dark;
+            --bg: #0e1511;
+            --surface: #16211a;
+            --surface-hover: #1c2a21;
+            --border: rgba(255,255,255,0.08);
+            --text: #e4ede6;
+            --text-muted: #a3b5a8;
+            --accent: #6fbf8b;
+            --accent-strong: #8fd4a6;
+            --nav-bg: #1a3325;
+            --footer-bg: #111b15;
+            --on-accent: #0b1410;
         }
-        html,body { height:100%; margin:0; font-family: Arial, sans-serif; color:#222; background:#f7f7f7; }
+        html,body { height:100%; margin:0; font-family: Arial, sans-serif; color:var(--text); background:var(--bg); }
+        a { color:var(--accent); }
+        a:hover:not(.back-btn):not(.download-btn):not(.yt-btn) { color:var(--accent-strong); }
         .page { max-width:980px; margin:0 auto; padding:28px; display:flex; flex-direction:column; min-height:100vh; }
         .center { display:flex; justify-content:center; align-items:center; }
         header {
             text-align:center;
             margin:18px 0 26px;
-            background: var(--green-light);
+            background: var(--surface);
             padding: 18px 12px;
             border-radius: 8px;
         }
-        header h1 { margin:0; font-size:2rem; color:var(--green); letter-spacing:0.02em; text-transform:uppercase; }
-        .back-btn { display:inline-block; background:var(--green); color:#fff; padding:10px 16px; border-radius:6px; text-decoration:none; font-weight:600; box-shadow:0 3px 8px rgba(0,0,0,0.12); }
-        .back-btn:focus { outline:2px dashed var(--green-dark); outline-offset:4px; }
+        header h1 { margin:0; font-size:2rem; color:var(--accent); letter-spacing:0.02em; text-transform:uppercase; }
+        .back-btn { display:inline-block; background:var(--accent); color:var(--on-accent); padding:10px 16px; border-radius:6px; text-decoration:none; font-weight:600; box-shadow:0 3px 8px rgba(0,0,0,0.12); }
+        .back-btn:focus { outline:2px dashed var(--accent-strong); outline-offset:4px; }
         main { flex:1; margin:18px 0; }
-        .note { color:#444; margin-bottom:36px; text-align:center; } /* increased spacing below the note */
+        .note { color:var(--text-muted); margin-bottom:36px; text-align:center; } /* increased spacing below the note */
 
         /* small cards for trivial projects */
         .expl-grid {
@@ -35,10 +47,10 @@
         }
         /* Make each card a same-size box with an image, a light-green title band, and a short description */
         .expl-card {
-            background:#fff;
+            background:var(--surface);
             border-radius:8px;
             overflow:hidden;
-            border:1px solid rgba(0,0,0,0.06);
+            border:1px solid var(--border);
             box-shadow:0 4px 10px rgba(0,0,0,0.04);
             display:flex;
             flex-direction:column;
@@ -49,7 +61,7 @@
             height:auto; /* let image determine height to avoid cropping */
             object-fit:contain; /* preserve full image without cropping */
             display:block;
-            background:#eee;
+            background:var(--bg);
             border-bottom-left-radius:0;
             border-bottom-right-radius:0;
         }
@@ -61,8 +73,8 @@
             flex:1;
         }
         .expl-title {
-            background: var(--green-light);
-            color: var(--green-dark);
+            background: var(--surface-hover);
+            color: var(--accent);
             padding:8px 10px;
             border-radius:6px;
             font-weight:700;
@@ -75,7 +87,7 @@
             margin:0;
         }
 
-        footer { margin-top:28px; text-align:center; color:#666; font-size:0.9rem; }
+        footer { margin-top:28px; text-align:center; color:var(--text-muted); background:var(--footer-bg); font-size:0.9rem; }
         @media (max-width:600px) {
             .expl-thumb { height:auto; }
             .page { padding:20px; }
