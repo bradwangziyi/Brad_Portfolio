@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="dark">
+    <title>Interactive Brick Phone: Birthday Gift</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #0e1511;
+            --surface: #16211a;
+            --surface-hover: #1c2a21;
+            --border: rgba(255,255,255,0.08);
+            --text: #e4ede6;
+            --text-muted: #a3b5a8;
+            --accent: #6fbf8b;
+            --accent-strong: #8fd4a6;
+            --nav-bg: #1a3325;
+            --footer-bg: #111b15;
+            --on-accent: #0b1410;
+        }
+        html,body { height:100%; margin:0; font-family: Arial, sans-serif; color:var(--text); background:var(--bg); }
+        a { color:var(--accent); }
+        a:hover:not(.back-btn):not(.download-btn):not(.yt-btn) { color:var(--accent-strong); }
+        h2 { color:var(--accent); }
+        .page { max-width:980px; margin:0 auto; padding:28px; display:flex; flex-direction:column; min-height:100vh; }
+        .center { display:flex; justify-content:center; align-items:center; }
+        header {
+            text-align:center;
+            margin:18px 0 26px;
+            background: var(--surface);
+            padding: 18px 12px;
+            border-radius: 8px;
+        }
+        header h1 { margin:0; font-size:2rem; color:var(--accent); letter-spacing:0.03em; }
+        .back-btn { display:inline-block; background:var(--accent); color:var(--on-accent); padding:10px 16px; border-radius:6px; text-decoration:none; font-weight:600; box-shadow:0 3px 8px rgba(0,0,0,0.12); }
+        .back-btn:focus { outline:2px dashed var(--accent-strong); outline-offset:4px; }
+        main { flex:1; margin:18px 0; }
+        .project-section { margin:18px 0; padding:18px; border-radius:8px; background:var(--surface); box-shadow:0 1px 4px rgba(0,0,0,0.04); }
+        .project-figure { margin:12px 0; }
+        .project-figure img { display:block; max-width:100%; height:auto; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.06); }
+        .project-figure figcaption { margin-top:6px; color:var(--text-muted); font-size:0.95rem; }
+        footer { margin-top:28px; text-align:center; color:var(--text-muted); background:var(--footer-bg); font-size:0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="center" style="margin-bottom:12px;">
+            <a class="back-btn" href="index.html#portfolio" aria-label="Back to portfolio">← Back to portfolio</a>
+        </div>
+
+        <header>
+            <h1>Interactive Brick Phone: Birthday Gift</h1>
+        </header>
+
+        <main>
+            <section class="project-section" aria-labelledby="project-heading">
+                <h2 id="project-heading" style="margin-top:0;">Project Overview</h2>
+                <p>This project is a working replica of a 90s brick phone, built as a personalized birthday gift. I handled everything from the enclosure design to the electronics and firmware, ending with a handheld device that behaves like the real thing: it shows a menu, beeps when you press keys, and announces a voice message.</p>
+                <figure class="project-figure">
+                    <img src="phoneCAD.png" alt="SolidWorks CAD model of the brick phone" loading="lazy">
+                    <figcaption>SolidWorks CAD model of the brick phone.</figcaption>
+                </figure>
+
+                <p>I designed the shell in SolidWorks, modeling the body, button cutouts, display window, speaker grille and internal mounting features around the actual component dimensions. I printed it on a Bambu X1C in PETG, chosen for its toughness and layer adhesion, and tuned the part geometry so the electronics fit securely with no glue.</p>
+                <figure class="project-figure">
+                    <img src="phonePrinted.png" alt="3D printed PETG brick phone shell" loading="lazy">
+                    <figcaption>3D printed PETG brick phone shell.</figcaption>
+                </figure>
+
+                <p>Inside, an Arduino Nano controls a 0.96&quot; OLED display, a voice recording and playback module driving a 0.5 W speaker, and a piezo buzzer. I soldered the five-way navigation array (up, down, left, right and a center confirm key) from push switches onto a perf board myself, then wired it all into the compact shell.</p>
+
+                <p>On the software side, the firmware handles the button inputs, a menu system that you navigate with the arrow keys, and key-press beeps from the buzzer. When a voice message is waiting, a notification appears on screen. Playing it triggers the pre-recorded birthday greeting, followed by a happy birthday melody played on the buzzer, which gives it the low-bit, nostalgic sound I wanted.</p>
+                <figure class="project-figure">
+                    <img src="phonePoweredOn.png" alt="Finished brick phone powered on" loading="lazy">
+                    <figcaption>Finished brick phone powered on.</figcaption>
+                </figure>
+            </section>
+        </main>
+
+        <div class="center" style="margin-top:18px;">
+            <a class="back-btn" href="index.html#portfolio" aria-label="Back to portfolio (bottom)">← Back to portfolio</a>
+        </div>
+
+        <footer>
+            <small>&copy; <span id="year"></span> Brad Ziyi Wang. All rights reserved.</small>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
