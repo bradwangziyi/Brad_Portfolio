@@ -58,23 +58,35 @@
         <main>
             <section class="project-section" aria-labelledby="project-heading">
                 <h2 id="project-heading" style="margin-top:0;">Project Overview</h2>
-                <p>This project is a working replica of a 90s brick phone, built as a personalized birthday gift. I handled everything from the enclosure design to the electronics and firmware, ending with a handheld device that behaves like the real thing: it shows a menu, beeps when you press keys, and announces a voice message.</p>
+                <p>This project is a working replica of a 90s brick phone, built as a personalized birthday gift. 
+                    I handled everything from the enclosure design to the electronics and firmware, ending with a 
+                    handheld device that behaves like the real thing: it shows a menu, beeps when you press keys, 
+                    and announces a voice message.</p>
                 <figure class="project-figure">
-                    <img src="phoneCAD.png" alt="SolidWorks CAD model of the brick phone" loading="lazy">
+                    <img src="brickphone_drawing.png" alt="SolidWorks CAD model of the brick phone" loading="lazy">
                     <figcaption>SolidWorks CAD model of the brick phone.</figcaption>
                 </figure>
 
-                <p>I designed the shell in SolidWorks, modeling the body, button cutouts, display window, speaker grille and internal mounting features around the actual component dimensions. I printed it on a Bambu X1C in PETG, chosen for its toughness and layer adhesion, and tuned the part geometry so the electronics fit securely with no glue.</p>
+                <p>I designed the shell in SolidWorks, modeling the body, button cutouts, display window, speaker 
+                    grille and internal mounting features around the actual component dimensions. I printed it on 
+                    a Bambu X1C in PETG, chosen for its toughness and layer adhesion, and tuned the part geometry 
+                    so the electronics fit securely with no glue.</p>
                 <figure class="project-figure">
-                    <img src="phonePrinted.png" alt="3D printed PETG brick phone shell" loading="lazy">
-                    <figcaption>3D printed PETG brick phone shell.</figcaption>
+                    <img src="brickphone_printed.jpg" alt="3D printed PETG brick phone shell (Frontal cover and Arduino Nano fixture)" loading="lazy">
+                    <figcaption>3D printed PETG brick phone shell (Frontal cover and Arduino Nano fixture)</figcaption>
                 </figure>
 
-                <p>Inside, an Arduino Nano controls a 0.96&quot; OLED display, a voice recording and playback module driving a 0.5 W speaker, and a piezo buzzer. I soldered the five-way navigation array (up, down, left, right and a center confirm key) from push switches onto a perf board myself, then wired it all into the compact shell.</p>
+                <p>Inside, an Arduino Nano controls a 0.96&quot; OLED display, a voice recording and playback module 
+                    driving a 0.5 W speaker, and a piezo buzzer. I soldered the five-way navigation array (up, down, 
+                    left, right and a center confirm key) from push switches onto a perf board myself, then wired it 
+                    all into the compact shell.</p>
 
-                <p>On the software side, the firmware handles the button inputs, a menu system that you navigate with the arrow keys, and key-press beeps from the buzzer. When a voice message is waiting, a notification appears on screen. Playing it triggers the pre-recorded birthday greeting, followed by a happy birthday melody played on the buzzer, which gives it the low-bit, nostalgic sound I wanted.</p>
+                <p>On the software side, the firmware handles the button inputs, a menu system that you navigate with 
+                    the arrow keys, and key-press beeps from the buzzer. When a voice message is waiting, a notification 
+                    appears on screen. Playing it triggers the pre-recorded birthday greeting, followed by a happy 
+                    birthday melody played on the buzzer, which gives it the low-bit, nostalgic sound I wanted.</p>
                 <figure class="project-figure">
-                    <img src="phonePoweredOn.png" alt="Finished brick phone powered on" loading="lazy">
+                    <img src="brickphone_powered.jpg" alt="Finished brick phone powered on" loading="lazy">
                     <figcaption>Finished brick phone powered on.</figcaption>
                 </figure>
             </section>

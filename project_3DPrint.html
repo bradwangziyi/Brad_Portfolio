@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="dark">
+    <link rel="icon" type="image/png" href="bk_icon.png">
+    <title>PROJECT 3D PRINTING</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #0e1511;
+            --surface: #16211a;
+            --surface-hover: #1c2a21;
+            --border: rgba(255,255,255,0.08);
+            --text: #e4ede6;
+            --text-muted: #a3b5a8;
+            --accent: #6fbf8b;
+            --accent-strong: #8fd4a6;
+            --nav-bg: #1a3325;
+            --footer-bg: #111b15;
+            --on-accent: #0b1410;
+        }
+        html,body { height:100%; margin:0; font-family: Arial, sans-serif; color:var(--text); background:var(--bg); }
+        a { color:var(--accent); }
+        a:hover:not(.back-btn):not(.download-btn):not(.yt-btn) { color:var(--accent-strong); }
+        h2 { color:var(--accent); }
+        .page { max-width:980px; margin:0 auto; padding:28px; display:flex; flex-direction:column; min-height:100vh; }
+        .center { display:flex; justify-content:center; align-items:center; }
+        header {
+            text-align:center;
+            margin:18px 0 26px;
+            background: var(--surface);
+            padding: 18px 12px;
+            border-radius: 8px;
+        }
+        header h1 { margin:0; font-size:2rem; color:var(--accent); letter-spacing:0.03em; }
+        .back-btn { display:inline-block; background:var(--accent); color:var(--on-accent); padding:10px 16px; border-radius:6px; text-decoration:none; font-weight:600; box-shadow:0 3px 8px rgba(0,0,0,0.12); }
+        .back-btn:focus { outline:2px dashed var(--accent-strong); outline-offset:4px; }
+        main { flex:1; margin:18px 0; }
+        .placeholder { border:1px dashed var(--border); border-radius:8px; padding:18px; background:var(--surface); }
+        .project-section { margin:18px 0; padding:18px; border-radius:8px; background:var(--surface); box-shadow:0 1px 4px rgba(0,0,0,0.04); }
+        .project-section h3 { margin-top:0; color:var(--accent); }
+        .project-images { display:flex; flex-wrap:wrap; gap:12px; margin-top:12px; }
+        .project-images img { max-width:100%; height:auto; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.06); }
+        .project-images .half { flex:1 1 48%; }
+        footer { margin-top:28px; text-align:center; color:var(--text-muted); background:var(--footer-bg); font-size:0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="center" style="margin-bottom:12px;">
+            <a class="back-btn" href="index.html#portfolio" aria-label="Back to portfolio">← Back to portfolio</a>
+        </div>
+
+        <header>
+            <h1>PROJECT 3D PRINTING</h1>
+        </header>
+
+        <main>
+            <section class="placeholder" aria-labelledby="project-overview-heading">
+                <h2 id="project-overview-heading" style="margin-top:0;">Project 3D Printing</h2>
+                <p>Established a 3D printing business offering printing and consulting services.</p>
+            </section>
+
+            <section class="project-section" aria-labelledby="status-heading">
+                <h3 id="status-heading">Project Overview</h3>
+                <p>This page reflects the project card from the portfolio and captures the current project status.</p>
+                <div class="project-images" role="list">
+                    <figure class="half" role="listitem">
+                        <img src="wip.jpg" alt="Project 3D Printing under construction" loading="lazy">
+                        <figcaption>3D printing concept / work in progress.</figcaption>
+                    </figure>
+                </div>
+                <p><strong>This webpage is currently under construction :P</strong></p>
+            </section>
+        </main>
+
+        <div class="center" style="margin-top:18px;">
+            <a class="back-btn" href="index.html#portfolio" aria-label="Back to portfolio (bottom)">← Back to portfolio</a>
+        </div>
+
+        <footer>
+            <small>&copy; <span id="year"></span> Brad Ziyi Wang. All rights reserved.</small>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
